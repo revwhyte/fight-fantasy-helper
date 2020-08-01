@@ -56,13 +56,6 @@ class Board extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
-        {/* my feature to the game */}
-        <div className="reset-game">
-          <button onClick={() => window.location.reload()}>
-            Reset
-          </button>
-
-        </div>
       </div>
     )
   }
@@ -79,6 +72,12 @@ class Game extends React.Component {
           <div>{/* status */}</div>
           <ol>{/* TODO */}</ol>
         </div>
+        {/* my feature to the game */}
+        <div className="reset-game">
+          <button onClick={reload}>
+            Reiniciar
+          </button>
+        </div>
       </div>
     )
   }
@@ -92,6 +91,10 @@ ReactDOM.render(
 // ========================================
 // Funcoes auxiliares
 // ========================================
+
+function reload() {
+  window.location.reload()
+}
 
 function calculateWinner(squares) {
   const lines = [
